@@ -1,4 +1,5 @@
 import turtle
+
 #Procedimiento para crear el cuadrado
 windows = turtle.Screen()
 windows.bgcolor('yellow')

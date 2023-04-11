@@ -1,4 +1,5 @@
 import turtle
+
 #Procedimiento para crear el cuadrado
 windows = turtle.Screen()
 windows.bgcolor('yellow')
@@ -42,18 +43,18 @@ lether5.write("O", move=False, font=('Arial', 70, "bold"))
 
 #cuadrados BlANCOS 76x76 ------------------------------------------
 positionsSquare = [[-200, 100, 17], [-100, 100, 17], [0, 100, 17], [100, 100, 17], [200, 100, 17],
-                   [-200, 0, 17], [-100, 0, 17], [0, 0, 17], [100, 0, 17], [200, 0, 17],
-                   [-200, -100, 17], [-100, -100, 17], [0, -100, 17], [100, -100, 17], [200, -100, 17],
-                   [-200, -200, 17], [-100, -200, 17], [0, -200, 17], [100, -200, 17], [200, -200, 17],
-                   [-200, -300, 17], [-100, -300, 17], [0, -300, 17], [100, -300, 17], [200, -300, 17],
-                   ]
+    [-200, 0, 17], [-100, 0, 17], [0, 0, 17], [100, 0, 17], [200, 0, 17],
+    [-200, -100, 17], [-100, -100, 17], [0, -100, 17], [100, -100, 17], [200, -100, 17],
+    [-200, -200, 17], [-100, -200, 17], [0, -200, 17], [100, -200, 17], [200, -200, 17],
+    [-200, -300, 17], [-100, -300, 17], [0, -300, 17], [100, -300, 17], [200, -300, 17],
+]
 
-def generatorSquare(x, y): #funcion creadora de cuadrados
+def generator_square(var_one, var_two): #funcion creadora de cuadrados
     square = turtle.Turtle()
     square.color("white")
     square.fillcolor("white")
     square.penup()
-    square.goto(x, y)
+    square.goto(var_one, var_two)
     square.begin_fill()
     square.forward(38)
     square.pendown()
@@ -70,16 +71,16 @@ def generatorSquare(x, y): #funcion creadora de cuadrados
     square.end_fill()
 
 for positionArray in positionsSquare:
-    generatorSquare(positionArray[0], positionArray[1])
+    generator_square(positionArray[0], positionArray[1])
     print(positionArray[0])
 
 #numero del BINGO ------------------------------------------
-def generatorNumbers(x, y, num): #funcion creadora de cuadrados
+def generator_numbers(coord_x, coord_y, num): #funcion creadora de cuadrados
     number = turtle.Turtle()
     number.color("black")
     #number.fillcolor("black")
     number.penup()
-    number.goto(x-36, y-36)
+    number.goto(coord_x-36, coord_y-36)
     #number.begin_fill()
     #number.forward(38)
     number.pendown()
@@ -87,6 +88,6 @@ def generatorNumbers(x, y, num): #funcion creadora de cuadrados
     #number.end_fill()
 
 for numbersInSquare in positionsSquare:
-    generatorNumbers(numbersInSquare[0], numbersInSquare[1], numbersInSquare[2])
+    generator_numbers(numbersInSquare[0], numbersInSquare[1], numbersInSquare[2])
 
 turtle.done()
